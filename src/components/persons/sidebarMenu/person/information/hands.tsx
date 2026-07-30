@@ -360,14 +360,12 @@ export function Hands(props: HandsProps) {
         );
 
         draw(unregisteredFootprints, ctx, colors["UNREGISTERED"], "No Registrado", selectedOption);
-        let selectedFootprints: Area[] = [];
-
         if (selectedOption) {
-          if (selectedOption == "Pulgares" || selectedOption == "Indices") {
-            selectedFootprints = AREAS.filter((item) => item.group == selectedOption);
-          } else {
-            selectedFootprints = AREAS.filter((item) => item.id.toString() == selectedOption);
-          }
+          const selectedFootprints: Area[] =
+            selectedOption === "Pulgares" || selectedOption === "Indices"
+              ? AREAS.filter((item) => item.group === selectedOption)
+              : AREAS.filter((item) => item.id.toString() === selectedOption);
+
           draw(selectedFootprints, ctx, NOPROCESS, "", selectedOption);
           draw(selectedFootprints, ctx, colors["PROCESS"], "En proceso", selectedOption);
         }

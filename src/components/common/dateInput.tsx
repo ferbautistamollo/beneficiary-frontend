@@ -3,6 +3,8 @@ import type { ComponentProps } from "react";
 import { DateInput } from "@heroui/date-input";
 import { parseDate } from "@internationalized/date";
 
+type DateInputValue = ComponentProps<typeof DateInput>["value"];
+
 type Props = Omit<ComponentProps<typeof DateInput>, "value"> & {
   value?: Date | string | null; // formato "aaaa-mm-dd"
 };
@@ -12,7 +14,7 @@ const classNames = {
 };
 
 export const DateInputCustom = ({ value, ...props }: Props) => {
-  const parsedValue = isValidISODate(value) ? parseDate(value!) : undefined;
+  const parsedValue = isValidISODate(value) ? parseDate(value) : undefined;
 
   return (
     <DateInput
@@ -20,7 +22,7 @@ export const DateInputCustom = ({ value, ...props }: Props) => {
       classNames={classNames}
       labelPlacement="outside"
       radius="sm"
-      value={parsedValue}
+      value={parsedValue as DateInputValue}
       variant="faded"
     />
   );

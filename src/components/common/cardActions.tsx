@@ -55,9 +55,9 @@ export const CardActions = ({
       >
         <CardBody className="flex flex-col gap-2 relative">
           <div className="flex justify-between items-start flex-wrap gap-2">
-            <span className="text-sm font-bold break-words">{textHeader}</span>
+            <span className="text-sm font-bold wrap-break-word">{textHeader}</span>
 
-            <div className="flex items-center gap-1 shrink-0 min-h-[32px]">
+            <div className="flex items-center gap-1 shrink-0 min-h-8">
               <span
                 className={`text-xs font-semibold transition-opacity duration-200 whitespace-nowrap
                   ${
@@ -77,7 +77,7 @@ export const CardActions = ({
             </div>
           </div>
           <div>
-            <p className={`${sizeTextBody} break-words`}>{textBody}</p>
+            <p className={`${sizeTextBody} wrap-break-word`}>{textBody}</p>
           </div>
         </CardBody>
       </Card>

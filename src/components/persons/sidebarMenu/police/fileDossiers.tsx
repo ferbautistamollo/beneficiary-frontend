@@ -49,9 +49,10 @@ export const FileDossiers = () => {
 
   const getPermissions = async () => {
     const { data } = await getAccessCookie();
-    data.includes('isCreateFileDossier') ? setIsCreateFileDossier(true) : setIsCreateFileDossier(false);
-    data.includes('isUpdateFileDossier') ? setIsUpdateFileDossier(true) : setIsUpdateFileDossier(false);
-    data.includes('isDeleteFileDossier') ? setIsDeleteFileDossier(true) : setIsDeleteFileDossier(false);
+
+    data.includes("isCreateFileDossier") ? setIsCreateFileDossier(true) : setIsCreateFileDossier(false);
+    data.includes("isUpdateFileDossier") ? setIsUpdateFileDossier(true) : setIsUpdateFileDossier(false);
+    data.includes("isDeleteFileDossier") ? setIsDeleteFileDossier(true) : setIsDeleteFileDossier(false);
   };
 
   const switchEdit = () => {

@@ -49,9 +49,10 @@ export const Documents = () => {
 
   const getPermissions = async () => {
     const { data } = await getAccessCookie();
-    data.includes('isCreateDocument') ? setIsCreateDocument(true) : setIsCreateDocument(false);
-    data.includes('isUpdateDocument') ? setIsUpdateDocument(true) : setIsUpdateDocument(false);
-    data.includes('isDeleteDocument') ? setIsDeleteDocument(true) : setIsDeleteDocument(false);
+
+    data.includes("isCreateDocument") ? setIsCreateDocument(true) : setIsCreateDocument(false);
+    data.includes("isUpdateDocument") ? setIsUpdateDocument(true) : setIsUpdateDocument(false);
+    data.includes("isDeleteDocument") ? setIsDeleteDocument(true) : setIsDeleteDocument(false);
   };
 
   const getDocumentsAffiliate = useCallback(async () => {
@@ -223,7 +224,6 @@ export const Documents = () => {
               <EmptyContent text="NO EXISTEN DOCUMENTOS REGISTRADOS" />
             )}
           </div>
-
           <div className={`relative h-full ${sizePdf}`}>{renderContent()}</div>
         </div>
       </div>

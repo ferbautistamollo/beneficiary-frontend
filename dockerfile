@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN corepack enable pnpm && pnpm i --frozen-lockfile
+RUN corepack enable pnpm && pnpm config set minimumReleaseAge 0 && pnpm i --frozen-lockfile --ignore-scripts
 
 COPY . .

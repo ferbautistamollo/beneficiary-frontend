@@ -11,11 +11,10 @@ export interface User {
   identityCard?: string;
   position?: string;
 }
-export interface TablePersons
-  extends Pick<
-    Person,
-    "id" | "firstName" | "secondName" | "mothersLastName" | "lastName" | "identityCard" | "gender"
-  > {}
+export interface TablePersons extends Pick<
+  Person,
+  "id" | "firstName" | "secondName" | "mothersLastName" | "lastName" | "identityCard" | "gender"
+> {}
 
 export interface Person {
   id: number;
